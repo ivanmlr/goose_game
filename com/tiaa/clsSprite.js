@@ -128,6 +128,7 @@ onMouseDown(e){
 
        //
        if (this.current_frame!=undefined){
+            this.frames[this.current_frame].alpha = this.alpha;
            this.frames[this.current_frame].Draw(tPT, this.scale, this.spinning);
        }
        

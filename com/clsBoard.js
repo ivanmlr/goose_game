@@ -1,7 +1,7 @@
 class clsBoard{
     constructor(pCtx){
         this.ctx=pCtx
-        this.sprite=new clsSprite(this.ctx, 'AR','imgs/background/',1, '.png', 50,30,1); 
+        this.sprite=new clsSprite(this.ctx, 'AR','imgs/background/',1, '.png', 50,30,1,0.9); 
         this.sprite.flw.pt.x=560;
         this.sprite.flw.pt.y=390;
         this.boxes = 

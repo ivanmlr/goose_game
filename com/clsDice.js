@@ -31,6 +31,6 @@ class clsDice{
     Draw(){
 
         this.sprite.current_frame=this.lastroll;
-        this.sprite.Draw()
+        this.sprite.Draw() 
     }
 }

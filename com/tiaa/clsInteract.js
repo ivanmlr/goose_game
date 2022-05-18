@@ -5,6 +5,7 @@ class clsInteract{
         this.Doc.addEventListener('keypress', this._keypressed.bind(this))
         this.Doc.addEventListener('mousemove', this._mousemove.bind(this)) 
         this.MousePositionPoint = new clsPoint(0,0);
+        this.blockedspace = false;
     }
 
     _keypressed(e){
@@ -12,7 +13,9 @@ class clsInteract{
         console.log("interact class")
         var tEvent=new Event('__KEYPRESS_CUSTOM', e);
         var new_event = new e.constructor(tEvent.type, e)
-
+        if(e.keyCode == 32 && this.blockedspace == true){
+            return;
+        }
         this.Doc.dispatchEvent(new_event); 
     }
 

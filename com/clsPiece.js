@@ -40,8 +40,15 @@ class clsPiece{
     /////////////////////////////////////////////////////////////////
 
     move(posx,posy){
-        this.sprite.flw.pt.x = posx;
-        this.sprite.flw.pt.y = posy;
+        if(this.color == "red"){
+            this.sprite.flw.pt.x = posx;
+            this.sprite.flw.pt.y = posy-20;
+        }
+        else{
+            this.sprite.flw.pt.x = posx;
+            this.sprite.flw.pt.y = posy;
+        }
+
         this.audio.Play();
     }
     /////////////////////////////////////////////////////////////////

@@ -1,5 +1,5 @@
 class clsPlayer {
-    constructor(pCtx, color, board, ) {
+    constructor(pCtx, color, board, interact) {
         this.ctx = pCtx
         this.color = color;
         this.piece = new clsPiece(this.ctx, this.color);
@@ -11,12 +11,17 @@ class clsPlayer {
         this.well = false;
         this.reverse = 0;
         this.win = new Event('win');
+        this.interact = interact;
     }
 
 
     _movePiece() {
         var pt = this.board.getPosition(this.position);
+
+
         this.piece.move(pt.x, pt.y);
+
+
 
 
     }
@@ -90,7 +95,7 @@ class clsPlayer {
     /////////////////////////////////////////////////////////////////
     _loop() {
         if (this.stop == 1) {
-            this.board.sprite.alpha = 1;
+
             return;
         }
 
@@ -116,7 +121,10 @@ class clsPlayer {
 
             }
             else {
+                
                 this.stop = 1;
+                this.board.sprite.alpha = 1;
+                this.interact.blockedspace = false;
                 this.checkBox();
             }
         }
